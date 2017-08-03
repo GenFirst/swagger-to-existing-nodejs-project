@@ -1,0 +1,7 @@
+version: '2'
+services:
+ swagger-demo-db:
+  image: mongo:3.4.6
+  ports:
+    - "27017:27017"
+

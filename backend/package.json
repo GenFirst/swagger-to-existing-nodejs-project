@@ -1,0 +1,29 @@
+{
+  "name": "swagger-to-existing-nodejs-project",
+  "version": "0.0.1",
+  "description": "Demo application that shows how to add Swagger UI Spec to existing Node.js/Express.js project ",
+  "keywords": [
+    "node.js",
+    "express.js",
+    "swagger"
+  ],
+  "author": "Ivan Vasiljevic",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "~3.9.1",
+    "gulp-eslint": "4.0.0",
+    "gulp-nodemon": "^2.2.1",
+    "eslint-plugin-mocha": "^4.11.0",
+    "eslint-plugin-node": "5.1.1"
+  },
+  "dependencies": {
+    "body-parser": "1.17.2",
+    "express": "4.15.3",
+    "mongoose": "4.11.5",
+    "swagger-ui-express": "2.0.4",
+    "method-override": "2.3.9"
+  },
+  "engines": {
+    "node": ">=6.11.0"
+  }
+}
