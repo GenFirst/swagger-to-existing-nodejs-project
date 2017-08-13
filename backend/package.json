@@ -20,7 +20,7 @@
     "body-parser": "1.17.2",
     "express": "4.15.3",
     "mongoose": "4.11.5",
-    "swagger-ui-express": "2.0.4",
+    "swagger-ui-express": "2.0.6",
     "method-override": "2.3.9"
   },
   "engines": {
