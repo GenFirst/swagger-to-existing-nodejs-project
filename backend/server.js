@@ -4,7 +4,9 @@
 // models to other modules
 var express = require('express'),
   router = express.Router(),
-  bodyParser = require('body-parser');
+  bodyParser = require('body-parser'),
+  swaggerUi = require('swagger-ui-express'),
+  swaggerDocument = require('./swagger.json');
 
 var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
@@ -32,11 +34,6 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-router.route('/health-check').get(function(req, res) {
-  res.status(200);
-  res.send('Hello World');
-});
-
 //middleware for create
 var createUser = function (req, res, next) {
   var user = new User(req.body);
@@ -51,7 +48,7 @@ var createUser = function (req, res, next) {
 };
 
 var updateUser = function (req, res, next) {
-  User.findByIdAndUpdate(req.body.user._id, req.body, {new: true}, function (err, user) {
+  User.findByIdAndUpdate(req.body._id, req.body, {new: true}, function (err, user) {
     if (err) {
       next(err);
     } else {
@@ -106,6 +103,7 @@ router.route('/users/:userId')
 
 router.param('userId', getByIdUser);
 
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use('/api/v1', router);
 
 app.listen(3000);
