@@ -6,7 +6,9 @@ var express = require('express'),
   router = express.Router(),
   bodyParser = require('body-parser'),
   swaggerUi = require('swagger-ui-express'),
-  swaggerDocument = require('./swagger.json');
+  YAML = require('yamljs');
+
+const swaggerDocument = YAML.load('./swagger.yaml');
 
 var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
